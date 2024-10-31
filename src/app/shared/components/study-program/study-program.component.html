@@ -1,0 +1,73 @@
+<!-- <div class="days">
+
+    <div class="day1">
+      <div class="table">
+        @if (tableId>0) {
+
+          <table cellspacing="0">
+            <thead>
+              <tr>
+                <td>a</td>
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr>
+                <td>a</td>
+              </tr>  
+            </tbody>
+          </table>
+
+        }
+        <div class="bottom">
+          <app-button [action]="addStudyProgram" [buttonTitle]="addProgram" [color]="success"></app-button>
+          <div class="right">
+            <app-button [action]="addRow" [buttonTitle]="addRowLabel" [color]="success"></app-button>
+            <app-button [action]="addCol" [buttonTitle]="addColLabel" [color]="success"></app-button>
+            <app-button [action]="deleteProgram" [buttonTitle]="deleteLabel" [color]="danger"></app-button>
+          </div>
+        </div>  
+
+      </div>
+
+    </div>
+
+  </div> -->
+  <div>
+    <app-button [action]="createNewScheduleTable.bind(this)" [buttonTitle]="createShedule" [color]="success"></app-button>
+    
+    <div class="tables">
+      @for (table of tables; track $index) {
+        <div class="table">
+          <div class="date">
+            <input type="date" placeholder="Tarih" />
+          </div>
+          
+        <table border="1">
+          <thead>
+            <tr>
+              <th *ngFor="let col of table.columns">{{ col.header }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of table.rows">
+              <td *ngFor="let col of table.columns">
+                {{ col.data[row.id] }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- <button (click)="addRow(i)">Satır Ekle</button>
+        <button (click)="addColumn(i)">Sütun Ekle</button> -->
+        <div class="buttons">
+
+          <app-button [action]="addRow.bind(this, $index)" [buttonTitle]="addRowLabel" [color]="success"></app-button>
+          <app-button [action]="addColumn.bind(this, $index)" [buttonTitle]="addColLabel" [color]="success"></app-button>
+      
+        </div>
+        
+        </div>
+      }
+    </div>
+     
+  </div>

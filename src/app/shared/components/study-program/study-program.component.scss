@@ -1,0 +1,39 @@
+    .tables , .table{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+    }
+    .tables{
+    
+    gap: 40px;
+    }
+    table{
+    background-color: white;
+    border-radius: 5px;
+    }
+    .buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin-top: 10px;
+    }
+    .date{
+        margin-bottom: 10px;
+    }
+    table tbody tr{
+        box-shadow: 0px -1px 1px black;
+    }
+    tbody tr:nth-child(odd){
+        background-color: rgb(233, 234, 234);
+    }
+    thead th{
+    padding:15px 2px;
+    }
+    
+    tbody tr td{
+    padding:10px 5px;
+    width:15vw;
+    height: 10vh;
+    }
